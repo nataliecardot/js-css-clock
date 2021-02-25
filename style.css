@@ -40,4 +40,10 @@ body {
   background: black;
   position: absolute;
   top: 50%;
+  /* 50% by default. 100% along x-axis puts pivot point on right-hand side */
+  transform-origin: 100%;
+  /* since divs are block and left-to-right by default, it's horizontal, but want it vertical to be pointing at 12:00 */
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
