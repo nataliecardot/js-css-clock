@@ -1,5 +1,5 @@
 const secondHand = document.querySelector('.second-hand');
-const minsHand = document.querySelector('.min-hand');
+const minuteHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 
 function setDate() {
@@ -12,11 +12,18 @@ function setDate() {
 
   const mins = now.getMinutes();
   const minsDegrees = (mins / 60) * 360 + 90;
-  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+  minuteHand.style.transform = `rotate(${minsDegrees}deg)`;
 
   const hour = now.getHours();
   const hourDegrees = (hour / 12) * 360 + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+  // Prevents hand noticeable rewinding to start in a counterclockwise direction - this awkward movement is visible because it's set to 0.05s in CSS; making this movement instantaneous
+  if (seconds == 0) {
+    secondHand.style.transitionDuration = '0s';
+    minuteHand.style.transitionDuration = '0s';
+    hourHand.style.transitionDuration = '0s';
+  }
 }
 
 setInterval(setDate, 1000);
