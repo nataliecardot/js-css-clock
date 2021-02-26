@@ -58,7 +58,7 @@ body {
 }
 
 .hour-hand {
-  width: 25%;
+  width: 35%;
   right: 50%;
   z-index: 1;
   height: 6px;
@@ -70,7 +70,7 @@ body {
 }
 
 .min-hand {
-  width: 45%;
+  width: 48%;
   right: 50%;
   z-index: 1;
   height: 4px;
