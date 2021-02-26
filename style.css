@@ -34,6 +34,20 @@ body {
   transform: translateY(-3px); /* account for the height of the clock hands */
 }
 
+.center {
+  width: 13px;
+  min-height: 13px;
+  height: 13px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* x-axis negative to the left, y-axis negative to the top */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
 .hand {
   width: 50%;
   background: black;
@@ -60,7 +74,7 @@ body {
 }
 
 .min-hand {
-  width: 43%;
+  width: 45%;
   right: 50%;
   z-index: 1;
   height: 4px;
